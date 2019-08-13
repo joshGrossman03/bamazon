@@ -106,7 +106,7 @@ var calculatePurchase = function(item_id_requested,stock_qty_requested,current_s
 
 var updateProducts = function(newStockQty,item_id_requested){
 
-    connection.query('UPDATE `products` SET `stock_qty`=? WHERE `item_id`=?',[newStockQty,item_id_requested],function(err,results){
+    connection.query('UPDATE TABLE `products` SET `stock_qty`=? WHERE `item_id`=?',[newStockQty,item_id_requested],function(err,results){
         if (err) throw err;
         console.table(results);
         storeFront();
