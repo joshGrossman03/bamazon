@@ -1,0 +1,20 @@
+
+1. Create DATABASE called bamazon 
+2. Add the PRODUCTS table to the database with the following columns
+	1.item_id
+	2.product_name
+	3.department_name
+	4.price
+	5.stock_qty
+3. Add inventory to the database
+4.customer app should begin by displaying the table only calling the columns for item_id, product_name, and price. SQL query that only brings in those specified columns
+	1.First make a connection to the database 
+	2. Use nom mysql to query DB and return only item_id, product_name and price
+
+
+5. Use inquirer to first prompt the user to enter in the item_id of the item they would like to purchase and second enter the stock_qty of the item. 
+
+User input variables, item_id_requested, stock_qty_requested
+
+ 
+6. Query DB to determine if qty requested is greater than stock_qty if greater than or equal to then fulfill order, display the purchase price to the customer and update table to deduct the qty requested from  the stock-qty. If requested qty is greater than stock_qty the inform the customer that there is insufficient qty to fill the order and prompt the customer to choose a different order or to exit. If they choose a different order then restart. If the say exit then exit program.
