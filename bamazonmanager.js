@@ -21,7 +21,7 @@ connection.connect(function(err){
 
 
 var managerConsole = function(){
-    console.log("Welcome to the Manager Console, What would you like to do today?\n");
+    console.log("\n\n\n\nWelcome to the Manager Console, What would you like to do today?\n");
     inquirer.prompt([
         {
             type:"list",
@@ -38,8 +38,8 @@ var managerConsole = function(){
             break;
             case "Add to Inventory": updateInventory();
             break;
-            /*case "Add New Product": addProduct();
-            break;*/
+            case "Add New Product": addProduct();
+            break;
         };
     });
 };
@@ -47,6 +47,7 @@ var managerConsole = function(){
 var productInventory = function(){
     connection.query('SELECT * FROM `products`', function(err, results){
         if(err) throw err;
+        console.log("\n\n\n\n");
         console.table(results);
         managerConsole();
     });  
@@ -111,6 +112,7 @@ var Inventory = function(item_id,product_name,stock_qty){
     this.product_name = product_name;
     this.stock_qty = stock_qty;
 };
+
 var updateItem = function(itemSelected,update_qty,){
     var updatedQty = 0;
     connection.query('SELECT `stock_qty` FROM `products` WHERE `product_Name`=?',[itemSelected],function(err, results){
@@ -123,7 +125,6 @@ var updateItem = function(itemSelected,update_qty,){
         //console.log(updatedQty);
         updateDB(updatedQty,itemSelected);
     });
-    
 };
 
 var updateDB = function(updatedQty,itemSelected){
@@ -145,11 +146,61 @@ var updateDB = function(updatedQty,itemSelected){
                     break;
 
                     case "Return to Main Menu": productInventory();
-                    managerConsole();
                     break;
                 };
         });
-        
-        
+    });
+};
+
+var addProduct = () =>{
+    inquirer.prompt([
+        {
+            type:"input",
+            message:"Product Name",
+            name:"productName"
+        },
+        {
+            type:"input",
+            message:"Department",
+            name:"department"
+        },
+        {
+            type:"input",
+            message:"Item Price",
+            name:"price"
+        },
+        {
+            type:"input",
+            message:"Initial amount in stock",
+            name:"initStock"
+        }
+    ]).then(function(answers){
+        var addItem = {
+            product_name: answers.productName,
+            department_name: answers.department,
+            price:answers.price,
+            stock_qty:answers.initStock
+        };
+
+        connection.query('INSERT INTO `products`SET ?',addItem,function(err,results){
+            if (err) throw err;
+            console.log("THE NEW ITEM HAS BEEN ADDED TO THE BAMAZON INVENTORY");
+            inquirer.prompt([
+                {
+                    type:"rawlist",
+                    message:"Select from the options below to continue",
+                    name:"subMenu",
+                    choices: ["Add another new Item","Return to Main Menu"]
+                }
+            ]).then(function(answers){
+                    switch (answers.subMenu){
+                        case "Add another new Item":addProduct();
+                        break;
+    
+                        case "Return to Main Menu": productInventory();
+                        break;
+                    };
+            });
+        });
     });
 };
