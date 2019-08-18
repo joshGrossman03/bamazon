@@ -15,9 +15,9 @@
     1.To get started you will need to clone the repository and install all dependencise in node (**inquirer & mysql npm modules**)
     1. To access the customer portal, open the **bamazoncustomer.js** file in node. Follow the prompts to place your order :)!
     **Customer Portal Screen Shots **
-    ![GitHub Logo](customer_landing.png)
-    ![GitHub Logo](customer_item_order.png)
-    ![GitHub Logo](customer_updated_inventory.png)
+    ![](/customer_landing.png)
+    ![](/customer_item_order.png)
+    ![](/customer_updated_inventory.png)
 
     
     1. To access the manager portal, open the **bamazonmanager.js** file on node. Follow the prompts and menus to manage the store inventory.
