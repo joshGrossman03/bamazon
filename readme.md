@@ -34,7 +34,7 @@
 
 ![manager landing](manager_1.png)
 ![](manager_2.png)
-![Inventory Update](cmanager_3.png)
+![Inventory Update](manager_3.png)
 ![](manager_4.png)
 ![](manager_5.png)
 ![](manager_6.png)
