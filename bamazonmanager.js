@@ -21,7 +21,15 @@ connection.connect(function(err){
 
 
 var managerConsole = function(){
-    console.log("\n\n\n\nWelcome to the Manager Console, What would you like to do today?\n");
+    console.log("*************************************************************************************\n");
+    console.log("**                                                                                 **\n");
+    console.log("**      Welcome to the Manager Console, What would you like to do today?           **\n");
+    console.log("**                                                                                 **\n");
+    console.log("*************************************************************************************\n");
+
+
+
+    
     inquirer.prompt([
         {
             type:"list",
@@ -57,12 +65,12 @@ var lowInventory = function(){
     connection.query('SELECT * FROM `products` WHERE `stock_qty` <= 5',function(err,results){
         if (err) throw err;
         console.table(results);
+        managerConsole();
     });
 };
 
 var updateInventory = function(){
 
-    var currentInventory = [];
         connection.query('SELECT `item_id`, `product_name`,`stock_qty` FROM `products`', function(err,results){
             if (err) throw err;
             resultsArray = results;
@@ -71,8 +79,6 @@ var updateInventory = function(){
 
             for(var i = 0; i < resultsArray.length;i++){
                 var newItem = new Inventory(resultsArray[i].item_id,resultsArray[i].product_name,resultsArray[i].stock_qty);
-                currentInventory.push(newItem);
-                
                 choices.push(newItem.product_name);
                
                
@@ -153,6 +159,8 @@ var updateDB = function(updatedQty,itemSelected){
 };
 
 var addProduct = () =>{
+
+
     inquirer.prompt([
         {
             type:"input",
