@@ -21,9 +21,9 @@
 **bamazoncustomer.js**
 
 
-   ![customer landing](bamazon/customer_landing.png)
-   ![Item Order](bamazon/customer_item_order.png)
-   ![Inventory Update](bamazon/customer_updated_inventory.png)
+   ![customer landing](customer_landing.png)
+   ![Item Order](customer_item_order.png)
+   ![Inventory Update](customer_updated_inventory.png)
 
     
     1. To access the manager portal, open the file on node. Follow the prompts and menus to manage the store inventory.
