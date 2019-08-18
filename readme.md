@@ -1,7 +1,7 @@
 #App description
 
-    This App consists of two modules, a customer ordering interface and a manger interface console. The customer interface displays a table of available products to the 
-    customer and allows them to place an order. If there is an insufficient quantity of the item ordered, the app will inform the user that there is not enough of thier desired product. 
+    This App consists of two modules, a customer ordering interface and a manger interface console. The customer interface         displays a table of available products to the 
+    customer and allows them to place an order. If there is an insufficient quantity of the item ordered, the app will inform     the user that there is not enough of thier desired product. 
 
     The manager portal has 4 main functions.
         1.  View listing of available  products
@@ -15,17 +15,21 @@
 
 #How to get started
 
-    1.  To get started you will need to clone the repository and install all dependencise in node **inquirer and mysql modules**
+    1.  To get started you will need to clone the repository and install all dependencise in node inquirer and mysql modules
 
-    2.  To access the customer portal, open the **bamazoncustomer.js** file in node. Follow the prompts to place your order :)!
+    2.  To access the customer portal, open the  file in node. Follow the prompts to place your order :
+**bamazoncustomer.js**
 
 
-    ![customer landing](bamazon/customer_landing.png)
-    ![Item Order](bamazon/customer_item_order.png)
-    ![Inventory Update](bamazon/customer_updated_inventory.png)
+   ![customer landing](bamazon/customer_landing.png)
+   ![Item Order](bamazon/customer_item_order.png)
+   ![Inventory Update](bamazon/customer_updated_inventory.png)
 
     
-    1. To access the manager portal, open the **bamazonmanager.js** file on node. Follow the prompts and menus to manage the store inventory.
+    1. To access the manager portal, open the file on node. Follow the prompts and menus to manage the store inventory.
+    
+**bamazonmanager.js**
+    
 
 #Need help with the app?
 
